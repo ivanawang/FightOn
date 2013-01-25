@@ -132,6 +132,7 @@ Item *readData(const char *filename, int &len)
 	}
 	else {
 		cout<< "Error opening file";
+		return NULL;
 	}
   
 }
