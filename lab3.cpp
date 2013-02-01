@@ -53,7 +53,13 @@ class List{
 		~List() {
 			delete [] friends;
 		}
-	
+		
+		//printList method
+		void printList(){
+			for(int i=0; i<size_; i++){
+				cout<<friends[i]<<" ";
+			}
+		}
 };
 
 //part 2
