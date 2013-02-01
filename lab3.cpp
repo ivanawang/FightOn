@@ -55,3 +55,50 @@ class List{
 		}
 	
 };
+
+//part 2
+class User {
+
+	private:
+	string name_;
+	int age_;
+	List friends;
+		
+	public: 
+		User(){
+			name_=" ";
+			age_ = -100;
+		}
+		
+		//Returns the name of the user
+		string getName(){
+			return name_;
+		}
+		//Set the name of the user
+		void setName(string name){
+			name_ = name;
+		}
+		
+		//Returns the age of the user
+		int getAge(){
+			return age_;
+		}
+		//Sets the age of the user
+		void setAge(int age){
+			age_ = age;
+		}
+		
+		//adds friend to next spot in array
+		void addFriend(string name){
+			friends.push_back(name);
+		}
+		
+		//part 4- print user information
+		void printInfo(){
+			cout<< "Name: " <<name_ <<endl;
+			cout<< "Age: " <<age_ <<endl;
+			cout<< "Friends: " <<endl;
+			friends.printList();
+			cout<<endl;
+		}
+};
