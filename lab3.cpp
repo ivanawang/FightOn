@@ -102,3 +102,47 @@ class User {
 			cout<<endl;
 		}
 };
+
+//part 3
+int main(){
+	vector <User*> Users;
+	string n = "";
+	//string d = "";
+	string f = "";
+	int a;
+	int numOfUsers = 0;
+	
+	do{
+		User* person = new User;
+		cout<<"Enter the first name and age of your friend. When you're finished, enter 'done'" <<endl;
+		cin>>n;
+		if(n == "done"){
+			break;
+		}
+		cin>>a;
+		person->setName(n); //dynamically allocated
+		person->setAge(a);
+		Users.push_back(person);
+		numOfUsers++;
+	}while(n != "done");
+	
+	while (f != "finished"){
+		cout<<"Enter the first name of the user and the first name of your friend. When you're done, enter 'finished'" <<endl;
+		cin>>f;
+		if(f == "finished"){
+			break;
+		}
+		cin>>f;
+		
+		for(int i=0; i<numOfUsers; i++){
+			if(Users[i]->getName() == n){
+				Users[i]->addFriend(f);
+			}
+		}
+	}
+		
+		for(int i=0; i<numOfUsers; i++){
+		Users[i]->printInfo();
+		}
+	
+}
